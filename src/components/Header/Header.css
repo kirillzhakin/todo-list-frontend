@@ -1,0 +1,45 @@
+@import "../../vendor/fonts/fonts.css";
+
+header {
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  height: 74px;
+  background-color:rgba(229, 229, 229, 1);
+  border-bottom: #000000 solid 1px;
+}
+
+.header__name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 0 0 auto;
+}
+
+.header__nav {
+  display: flex;
+  list-style: none;
+  margin: 0 70px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px; 
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: opacity, 0s, ease-out, 0.3s;
+}
+
+.header__button:hover {
+  opacity: 0.8;
+}

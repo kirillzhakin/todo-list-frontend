@@ -1,0 +1,82 @@
+@import "../../vendor/fonts/fonts.css";
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 396px;
+  min-width: 260px;
+  width: 70%;
+}
+
+.login__logo {
+  width: 38px;
+  height: 38px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 71px 0 0 0;
+  transition: opacity, 0s, ease-out, 0.3s;
+}
+
+.login__logo:hover {
+  opacity: 0.7;
+}
+
+.login__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 40px 0 20px 0;
+}
+
+.login__label {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(160, 160, 160, 1);
+  margin: 20px 0 0 0;
+}
+
+.login__input {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  height: 46px;
+  padding: 0;
+  border: none;
+  border-bottom: rgba(232, 232, 232, 1) solid 1px;
+  margin: 10px 0 0 0;
+  padding: 0 0 0 15px;
+}
+
+.login__input:focus {
+  outline: none;
+  border: none;
+  border-bottom: rgba(52, 86, 243, 1) solid 1px;
+}
+
+.login__error {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(255, 48, 85, 1);
+  margin: 10px 0 0 0;
+}
+
+.login__button {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  height: 45px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(52, 86, 243, 1);
+  margin: 127px 0 16px 0;
+  padding: 0;
+  transition: opacity, 0s, ease-out, 0.3s;
+  cursor: pointer;
+}
+
+.login__button:hover {
+  opacity: 0.8;
+}

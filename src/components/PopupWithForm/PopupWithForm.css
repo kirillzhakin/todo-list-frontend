@@ -1,0 +1,116 @@
+@import "../../vendor/fonts/fonts.css";
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.7s, opacity 0.7s linear;
+}
+
+.popup_opened {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__container {
+  max-width: 430px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding: 34px 36px 37px 36px;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #666363d3;
+  margin: 0 0 38px 0;
+}
+
+.popup__input-container {
+  display: flex;
+  height: 52px;
+  margin: 15px 0 0 0;
+}
+
+.popup__input-placeholder {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin-right: 10px;
+}
+
+.popup__input {
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+.popup__input:focus {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.popup__button {
+  margin: 28px 0 0 0;
+  padding: 0;
+  background: #666363d3;
+  border-radius: 2px;
+  border: none;
+  min-height: 30px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.popup__button:hover {
+  opacity: 0.8;
+  transition: opacity, 0s, ease-out, 0.5s;
+}
+
+.popup__close-btn {
+  position: absolute;
+  background-image: url(../../images/close-icon.svg);
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 32px;
+  height: 32px;
+  top: -40px;
+  right: -40px;
+  cursor: pointer;
+}
+
+.popup__close-btn:hover {
+  opacity: 0.6;
+  transition: opacity, 0s, ease-out, 0.5s;
+}
