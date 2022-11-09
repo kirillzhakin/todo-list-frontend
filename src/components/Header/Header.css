@@ -1,8 +1,9 @@
 @import "../../vendor/fonts/fonts.css";
 
-header {
+.header {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   max-width: 1280px;
   height: 74px;
   background-color:rgba(229, 229, 229, 1);
@@ -13,7 +14,7 @@ header {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  margin: 0 0 0 auto;
+  margin: 0;
 }
 
 .header__nav {

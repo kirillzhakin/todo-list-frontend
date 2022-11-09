@@ -29,7 +29,7 @@ class Api {
         title: newTask.title,
         priority: newTask.priority,
         date: newTask.date,
-        responsible: newTask.responsible,
+        responsibleUser: newTask.responsibleUser,
         status: newTask.status,
       }),
     }).then(this._getResponseData);
@@ -48,14 +48,21 @@ class Api {
   }
 
   // Редактировать задачу
-  setTask(id, token) {
-    return fetch(`${this.baseUrl}tasks/${id}`, {
+  setTask(task, token) {
+    return fetch(`${this.baseUrl}tasks/${task.id}`, {
       method: "PATCH",
       headers: {
         Accept: "application/json",
         authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        title: task.title,
+        priority: task.priority,
+        date: task.date,
+        responsibleUser: task.responsibleUser,
+        status: task.status,
+      }),
     }).then(this._getResponseData);
   }
 

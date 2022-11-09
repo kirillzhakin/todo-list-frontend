@@ -77,6 +77,14 @@
   border-bottom: 1px solid rgb(0, 0, 0);
 }
 
+.popup__error {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgba(255, 48, 85, 1);
+  margin: 10px 30px 0 auto;
+}
+
 .popup__button {
   margin: 28px 0 0 0;
   padding: 0;
@@ -95,6 +103,10 @@
 .popup__button:hover {
   opacity: 0.8;
   transition: opacity, 0s, ease-out, 0.5s;
+}
+
+.popup__button_disabled {
+  opacity: 0.6;
 }
 
 .popup__close-btn {

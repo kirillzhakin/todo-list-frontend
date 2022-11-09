@@ -4,11 +4,13 @@ import "./Header.css";
 
 function Header(props) {
   let location = useLocation();
+  let { login }  = props.userData || {};
 
-  let { name } = props.userData || {};
   return (
     <header className="header">
-      {props.isLoggedIn && <h2 className="header__name">{name}</h2>}
+      {props.isLoggedIn && (
+        <h2 className="header__name"> {`Пользователь: ${login}`}</h2>
+      )}
 
       <ul className="header__nav">
         {!props.isLoggedIn && (

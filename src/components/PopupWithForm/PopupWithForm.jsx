@@ -1,16 +1,80 @@
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import "./PopupWithForm.css";
 
-function PopupWithForm(props) {
+function PopupWithForm({
+  name,
+  task,
+  taskTitle,
+  date,
+  buttonText,
+  isOpen,
+  onClose,
+  onAddTask,
+  onEditTask,
+}) {
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({ mode: "all" });
+
+  const onSubmit = (data) => {
+    console.log(data);
+
+    if (onAddTask) {
+      onAddTask({
+        title: data.title,
+        priority: data.priority,
+        date: data.date,
+        responsibleUser: data.responsibleUser,
+        status: data.status,
+      });
+    }
+    if (onEditTask) {
+      onEditTask({
+        title: data.title,
+        priority: data.priority,
+        date: data.date,
+        responsibleUser: data.responsibleUser,
+        status: data.status,
+        id: task.id,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (onAddTask) {
+      reset({
+        title: "",
+        priority: "Средний",
+        date: date,
+        responsibleUser: "Иванов",
+        status: "К выполнению",
+      });
+    }
+
+    if (onEditTask) {
+      reset({
+        title: task.title,
+        priority: task.priority,
+        date: new Date(task.date).toLocaleDateString("en-ca"),
+        responsibleUser: task.responsibleUser,
+        status: task.status,
+      });
+    }
+  }, [isOpen]);
+
   return (
-    <div className={`popup ${props.isOpen && "popup_opened"}`}>
+    <div className={`popup ${isOpen && "popup_opened"}`}>
       <div className="popup__container">
         <form
-          name={props.name}
+          name={name}
           className="popup__form"
-          noValidate
-          onSubmit={props.handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
-          <h2 className="popup__title">{props.taskTitle}</h2>
+          <h2 className="popup__title">{taskTitle}</h2>
           <div className="popup__input-container">
             <p className="popup__input-placeholder">Задача:</p>
             <input
@@ -18,21 +82,23 @@ function PopupWithForm(props) {
               name="title"
               id="title"
               className="popup__input"
-              required
-              minLength="2"
-              maxLength="100"
-              value={props.title || ""}
-              onChange={props.handleChangeTitle}
+              {...register("title", {
+                required: "Поле обязательно к заполнению",
+              })}
             />
           </div>
+          {errors?.title && (
+            <span className="popup__error">
+              {errors?.title?.message || "Error!"}
+            </span>
+          )}
           <div className="popup__input-container">
             <p className="popup__input-placeholder">Приоритет:</p>
             <select
               name="select"
               id="priority"
               className="popup__input"
-              value={props.priority || ""}
-              onChange={props.handleChangePriority}
+              {...register("priority")}
             >
               <option value="Высокий">Высокий</option>
               <option value="Средний">Средний</option>
@@ -48,20 +114,16 @@ function PopupWithForm(props) {
               name="date"
               id="date"
               className="popup__input"
-              required
-              value={props.date || ""}
-              onChange={props.handleChangeData}
+              {...register("date", { value: date })}
             />
           </div>
           <div className="popup__input-container">
             <p className="popup__input-placeholder">Ответственный:</p>
             <select
               name="select"
-              id="responsible"
-              required
+              id="responsibleUser"
               className="popup__input"
-              value={props.responsible || ""}
-              onChange={props.handleChangeResponsible}
+              {...register("responsibleUser")}
             >
               <option value="Иванов">Иванов</option>
               <option value="Петров">Петров</option>
@@ -75,8 +137,7 @@ function PopupWithForm(props) {
               name="select"
               id="status"
               className="popup__input"
-              value={props.status || ""}
-              onChange={props.handleChangeStatus}
+              {...register("status")}
             >
               <option value="К выполнению">К выполнению</option>
               <option value="Выполняется">Выполняется</option>
@@ -87,15 +148,18 @@ function PopupWithForm(props) {
           <input
             type="submit"
             name="submit"
-            value={props.buttonText}
-            className="popup__button"
+            value={buttonText}
+            className={`popup__button ${
+              isValid ? "" : "popup__button_disabled"
+            }`}
+            disabled={!isValid}
           />
         </form>
         <button
           aria-label="Выход"
           type="button"
-          className="popup__close-btn"
-          onClick={props.onClose}
+          className="popup__close-btn "
+          onClick={onClose}
         ></button>
       </div>
     </div>

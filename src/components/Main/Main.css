@@ -4,45 +4,6 @@
   min-height: 600px;
 }
 
-.tasks-nav {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  column-gap: 30px;
-  align-items: center;
-  height: 74px;
-  margin: 0;
-}
-
-.tasks-nav__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  width: 100px;
-  height: 45px;
-  margin: 0;
-}
-
-.tasks-nav__button {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  height: 45px;
-  width: 100px;
-  border: none;
-  margin: 0;
-  padding: 0;
-  background-color:rgba(229, 229, 229, 1);  
-  cursor: pointer;
-  color: #000000;
-}
-
-.tasks-nav__button:hover {
-  text-decoration: underline;
-}
-
 .tasks {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

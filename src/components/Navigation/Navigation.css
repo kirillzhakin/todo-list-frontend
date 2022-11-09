@@ -1,0 +1,55 @@
+@import "../../vendor/fonts/fonts.css";
+
+.tasks-nav {
+  display: flex;
+  justify-content: space-between;
+  height: 74px;
+  margin: 0;
+}
+.tasks-nav__box {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  list-style: none;
+  padding: 0;
+  height: 20px;
+  margin: 16px 0 16px 0;
+}
+.tasks-nav__visor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  height: 20px;
+  margin: 16px 0 16px auto;
+}
+
+.tasks-nav__title {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  text-align: end;
+  margin: 0;
+}
+
+.tasks-nav__input {
+  height: 20px;
+}
+
+.tasks-nav__button {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background-color:rgba(229, 229, 229, 1);
+}
+
+.tasks-nav__button:hover {
+  text-decoration: underline;
+}
+.tasks-nav__button_active {
+  text-decoration: underline;
+}
+

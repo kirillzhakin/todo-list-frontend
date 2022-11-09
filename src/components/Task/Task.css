@@ -29,7 +29,7 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 28px;
-  color: #848482
+  color: #848482;
 }
 
 .task__un-list {
@@ -43,7 +43,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-
   padding: 0;
   cursor: pointer;
   color: #000000;
